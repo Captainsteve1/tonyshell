@@ -30,8 +30,8 @@ async def get_video_duration(input_file):
         total_duration = metadata.get("duration").seconds
     return total_duration
 
-@TYBot.on_message(filters.command("tgupload") & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
-async def tg_Uploader_Handler(bot: TYBot, message: Message):
+@JVBot.on_message(filters.command("tgupload") & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
+async def tg_Uploader_Handler(bot: JVBot, message: Message):
     sts_msg = await message.reply_text("Please wait ...")
     try:
         input_str = message.text.split(" ", 1)[1]
@@ -78,21 +78,21 @@ async def tg_Uploader_Handler(bot: TYBot, message: Message):
     except:
         pass
 
-@TYBot.on_message(filters.photo & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
-async def sav_Thumb_Handler(bot: TYBot, message: Message):
+@JVBot.on_message(filters.photo & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
+async def sav_Thumb_Handler(bot: JVBot, message: Message):
     sts_msg = await message.reply_text("Please wait ...")
     filename = await message.download(str(message.from_usr.id) + ".jpg")
     await sts_msg.edit("custom thumbnail saved ....")
 
-@TYBot.on_message(filters.command("getthumb") & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
-async def tg_Uploader_Handler(bot: TYBot, message: Message):
+@JVBot.on_message(filters.command("getthumb") & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
+async def tg_Uploader_Handler(bot: JVBot, message: Message):
     if os.path.exists(str(message.from_usr.id) + ".jpg"):
         await message.reply_photo(str(message.from_usr.id) + ".jpg")
     else:
         await message.reply_text("Thumbnail not found, send photo to save thumbnail.")
 
-@TYBot.on_message(filters.command("webupload") & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
-async def web_Uploader_Handler(bot: TYBot, message: Message):
+@JVBot.on_message(filters.command("webupload") & (filters.chat(AUTHORIZED_CHATS) | filters.user(OWNER_ID)))
+async def web_Uploader_Handler(bot: JVBot, message: Message):
     error_msg = """send along with type and file path
 
 **Available types:**
