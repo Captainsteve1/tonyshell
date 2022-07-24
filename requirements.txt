@@ -13,6 +13,7 @@ lk21
 lxml
 pillow
 psutil
+pymongo
 psycopg2-binary
 pybase64
 pyrogram
@@ -26,3 +27,4 @@ tenacity
 tgCrypto
 urllib3
 yt-dlp
+hachoir
