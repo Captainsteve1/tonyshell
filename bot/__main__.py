@@ -8,7 +8,7 @@ from telegram import InlineKeyboardMarkup
 from telegram.ext import CommandHandler
 
 from bot import bot, LOGGER, botStartTime, AUTHORIZED_CHATS, DEST_DRIVES, TELEGRAPH, Interval, dispatcher, updater, JVBot
-from bot.modules import auth, cancel, clone, compress, count, delete, eval, list, permission, shell, status, pyromods
+from bot.modules import auth, cancel, compress, count, delete, eval, list, permission, shell, status, pyromods
 from bot.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from bot.helper.ext_utils.fs_utils import start_cleanup, clean_all, exit_clean_up
 from bot.helper.telegram_helper.bot_commands import BotCommands
